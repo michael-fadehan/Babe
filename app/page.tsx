@@ -29,10 +29,10 @@ export default function Home() {
         style={{ backgroundImage: `url(${heroSlides[activeSlide].image})` }}
       >
         <div className="hero-copy">
-          <span className="eyebrow">DID | Bridal styling and Creative Direction</span>
-          <h1>Timeless elegance, made for you.</h1>
+          <span className="eyebrow">DID | Bridal and Moment styling</span>
+          <h1>Bridal Styling, expertly considered..</h1>
           <p>
-            Luxury bridal designs meticulously crafted to celebrate your love story.
+            Luxury bridal designs meticulously crafted to celebrate your love story
           </p>
           <div className="hero-actions">
             <a href="/contact#book-consultation" className="button button-primary">Book Consultation</a>
