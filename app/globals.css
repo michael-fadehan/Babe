@@ -353,6 +353,7 @@ button {
 .hero h1,
 .story-copy h2,
 .section-header h2 {
+  text-transform: uppercase; /* Make hero heading uppercase */
   font-size: clamp(2.75rem, 4vw, 4.5rem);
   line-height: 0.95;
   margin: 0;
