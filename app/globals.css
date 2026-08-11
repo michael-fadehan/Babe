@@ -289,9 +289,11 @@ button {
   margin-left: calc(50% - 50vw); /* Center the full-width element, breaking out of parent constraints */
   padding: 0; /* Remove all padding to allow image to go edge-to-edge */
   min-height: 720px;
+  min-height: 820px; /* Increased from 720px */
   /* The background is now set via inline styles in the component */
+  background-size: cover; /* Reverted to original cropping behavior */
   background-size: cover;
-  background-position: 90% top; /* Position the model on the right, aligned to the top */
+  background-position: 90% center; /* Keep the model on the right */
   /* border-radius: var(--radius); */ /* REMOVED for sharp edges */
   /* box-shadow: var(--shadow); */ /* REMOVED for full-bleed effect */
   overflow: hidden; /* Clip any overflowing content from the slideshow */

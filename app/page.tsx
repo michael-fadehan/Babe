@@ -9,6 +9,8 @@ export default function Home() {
     { id: '01', image: '/images/hero.png' },
     { id: '02', image: '/images/hero2.png' },
     { id: '03', image: '/images/hero3.png' },
+    { id: '04', image: '/images/hero4.png' },
+    { id: '05', image: '/images/hero5.png' },
   ];
 
   useEffect(() => {
