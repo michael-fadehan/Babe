@@ -1,7 +1,22 @@
 import './globals.css';
 import type { Metadata } from 'next';
+import { Montserrat, Cormorant_Garamond } from 'next/font/google';
 import Link from 'next/link';
 import Header from './components/Header';
+
+const montserrat = Montserrat({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-sans',
+  display: 'swap',
+});
+
+const cormorant = Cormorant_Garamond({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-display',
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   title: 'Babe',
@@ -10,7 +25,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${montserrat.variable} ${cormorant.variable}`}>
       <body>
         <div className="site-shell">
           <Header />
