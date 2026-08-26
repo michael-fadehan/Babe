@@ -16,6 +16,7 @@
   --color-espresso: #3A2E2A; /* Espresso */
   --color-espresso-dark: #241C19; /* Dark espresso sections */
   --color-gold: #B49A6A; /* Gold accent */
+  --topbar-offset: 72px; /* approximate fixed header height used for spacing */
   font-family: var(--font-sans), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
@@ -604,21 +605,29 @@ button {
 }
 
 .about-hero {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(420px, 1fr);
-  gap: 2.5rem;
-  background: var(--color-espresso-dark);
-  color: #fff;
-  border-radius: 0; /* remove rounded corners for full-bleed */
-  padding: 3rem 0; /* vertical padding only so content can align with page */
-  box-shadow: var(--shadow);
-  align-items: center;
-  width: 100vw; /* make full-bleed */
+  position: relative;
+  width: 100vw; /* full-bleed */
   margin-left: calc(50% - 50vw);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+  gap: 2.5rem;
+  color: #fff;
+  background: var(--color-espresso-dark);
+  background-size: cover;
+  background-position: 90% center;
+  padding: calc(var(--topbar-offset) + 3rem) 0 3rem; /* keep header offset */
 }
 
 .about-hero-copy {
-  max-width: 560px;
+  position: relative;
+  z-index: 2; /* ensure text sits above gradient */
+  max-width: 900px; /* match homepage hero width */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px 1.5rem 0 100px; /* similar to homepage hero */
 }
 
 .about-hero-copy h1 {
@@ -634,7 +643,13 @@ button {
 }
 
 .about-hero-copy {
-  padding: 0 1.5rem; /* align inner content with page shell */
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px 1.5rem 0 100px;
 }
 
 .about-hero-media {
@@ -856,35 +871,31 @@ button {
   margin: 0;
   font-size: clamp(2.25rem, 3vw, 3rem);
 }
-
 .contact-hero {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(420px, 1fr);
-  gap: 2rem;
-  align-items: center;
-  padding: 4rem 0 2rem;
+  position: relative;
   width: 100vw; /* full-bleed */
   margin-left: calc(50% - 50vw);
-  background: var(--color-espresso-dark); /* dark band */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+  gap: 2rem;
   color: #fff;
+  background: var(--color-espresso-dark); /* dark band */
+  background-size: cover;
+  background-position: 90% center;
+  padding: calc(var(--topbar-offset) + 4rem) 0 2rem; /* offset so hero content sits below fixed header */
   border-radius: 0;
 }
 
 .contact-hero-copy {
-  max-width: 620px;
-  padding: 0 1.5rem; /* inner gutter */
-}
-
-.contact-hero-copy h1 {
-  font-size: clamp(3rem, 4vw, 4.75rem);
-  margin: 0.8rem 0 1.5rem;
-  line-height: 0.95;
-}
-
-.contact-hero-copy p {
-  margin: 0;
-  color: rgba(255,255,255,0.9);
-  line-height: 1.8;
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px 1.5rem 0 100px; /* match homepage hero padding */
 }
 
 .contact-hero-subtitle {
