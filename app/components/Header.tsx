@@ -29,9 +29,9 @@ export default function Header() {
         </button>
       </div>
       <nav className={`nav-links ${mobileNavOpen ? 'open' : ''}`}>
-        <Link href="/#home">Home</Link>
+        <Link href="/">Home</Link>
         <Link href="/#bespoke">Bespoke</Link>
-        <Link href="/portfolio">Portfolio</Link>
+        <Link href="/#gallery">Portfolio</Link>
         <Link href="/rates">Rates</Link>
         <Link href="/about">About</Link>
         <Link href="/contact">Contact</Link>

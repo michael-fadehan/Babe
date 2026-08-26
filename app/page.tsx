@@ -1,10 +1,13 @@
-'use client';
+ 'use client';
 
 import { useEffect, useState } from 'react';
+import Process from './components/Process';
+import Services from './components/Services';
+import Gallery from './components/Gallery';
+import Testimonial from './components/Testimonial';
 
 export default function Home() {
   const [activeSlide, setActiveSlide] = useState(0);
-  const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const heroSlides = [
     { id: '01', image: '/images/hero.png' },
     { id: '02', image: '/images/hero2.png' },
@@ -30,7 +33,7 @@ export default function Home() {
       >
         <div className="hero-copy">
           <span className="eyebrow">DID | Bridal and Moment styling</span>
-          <h1>Bridal Styling, expertly considered..</h1>
+          <h1>Bridal styling, expertly considered.</h1>
           <p>
             Luxury bridal designs meticulously crafted to celebrate your love story
           </p>
@@ -39,7 +42,10 @@ export default function Home() {
             <a href="#gallery" className="button button-secondary">View Gallery</a>
           </div>
         </div>
+        <div className="annotation">Image — editorial / behind the fitting</div>
       </section>
+
+      <Testimonial />
 
       <section className="story" id="about">
         <div className="story-media">
@@ -58,47 +64,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="process" id="bespoke">
-        <div className="section-header">
-          <span className="eyebrow">THE DERIN IN DETAILS EXPERIENCE</span>
-          <h2></h2>
-        </div>
-        <div className="process-grid">
-          {[
-            { step: '01', title: 'DISCOVER', detail: 'Understanding your vision, personal style, event and priorities.' },
-            { step: '02', title: 'DEFINE', detail: 'Establishing your creative direction, budget and overall styling framework.' },
-            { step: '03', title: 'CURATE', detail: 'Selecting designers, vendors, fabrics, colours and visual references that bring the direction to life.' },
-            { step: '04', title: 'CREATE', detail: 'Overseeing the design, production and development of each look.' },
-            { step: '05', title: 'REFINE', detail: 'Fittings, accessories, final adjustments and all the details that complete your wardrobe.' },
-            { step: '06', title: 'DELIVER', detail: 'Bringing everything together through a considered itinerary and seamless wedding-day execution.' },
-          ].map((item) => (
-            <article key={item.step} className="process-card">
-              <div className="process-step">{item.step}</div>
-              <h3>{item.title}</h3>
-              <p>{item.detail}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="featured" id="gallery">
-        <div className="section-header">
-          <span className="eyebrow">Featured designs</span>
-          <h2>Made to be remembered.</h2>
-        </div>
-        <div className="filter-bar">
-          {['All', 'Bridal', 'Reception', 'Traditional', 'Custom', 'Latest'].map((label) => (
-            <button key={label} type="button" className={label === 'All' ? 'filter active' : 'filter'}>
-              {label}
-            </button>
-          ))}
-        </div>
-        <div className="featured-grid">
-          {Array.from({ length: 6 }).map((_, index) => (
-            <div key={index} className="featured-item" />
-          ))}
-        </div>
-      </section>
+      <Process />
+      <Services />
+      <Gallery />
+      <Testimonial />
     </main>
   );
 }

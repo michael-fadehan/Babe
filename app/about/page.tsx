@@ -1,4 +1,5 @@
-'use client';
+ 'use client';
+import Testimonial from '../components/Testimonial';
 
 const values = [
   {
@@ -78,6 +79,8 @@ export default function AboutPage() {
           ))}
         </div>
       </section>
+
+      <Testimonial />
 
       <section className="about-behind">
         <div className="about-behind-copy">

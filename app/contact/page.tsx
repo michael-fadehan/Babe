@@ -1,4 +1,5 @@
-'use client';
+ 'use client';
+import BookingForm from '../components/BookingForm';
 
 export default function ContactPage() {
   return (
@@ -19,31 +20,9 @@ export default function ContactPage() {
 
       <section id="book-consultation" className="contact-grid">
         <div className="contact-form-card">
-          <h2>Send us a message</h2>
-          <p>Fill in the form below and we’ll get back to you.</p>
-          <form className="contact-form">
-            <label>
-              Full Name*
-              <input type="text" name="name" placeholder="Your name" />
-            </label>
-            <label>
-              Email Address*
-              <input type="email" name="email" placeholder="you@example.com" />
-            </label>
-            <label>
-              Phone Number*
-              <input type="tel" name="phone" placeholder="123 456 7890" />
-            </label>
-            <label>
-              Subject
-              <input type="text" name="subject" placeholder="Message subject" />
-            </label>
-            <label>
-              Your Message*
-              <textarea name="message" placeholder="Write your message here" rows={6} />
-            </label>
-            <button type="submit" className="button button-primary">Send Message</button>
-          </form>
+          <h2>Book a consultation</h2>
+          <p>Please provide a few details and we’ll follow up within 48 hours.</p>
+          <BookingForm />
         </div>
 
         <div className="contact-info-card">
@@ -57,20 +36,8 @@ export default function ContactPage() {
 
           <div className="contact-info-list">
             <div>
-              <p className="contact-info-label">Visit Us</p>
-              <p>Derin In Details Studio<br />12 Grace Avenue, Ikoyi<br />Lagos, Nigeria</p>
-            </div>
-            <div>
-              <p className="contact-info-label">Call Us</p>
-              <p>+234 812 345 6789<br />+234 901 234 5678</p>
-            </div>
-            <div>
-              <p className="contact-info-label">Email Us</p>
-              <p>hello@derinindetails.com<br />info@derinindetails.com</p>
-            </div>
-            <div>
-              <p className="contact-info-label">Studio Hours</p>
-              <p>Monday – Saturday: 10am – 6pm<br />Sunday: By appointment only</p>
+              <p className="contact-info-label">Reach Us</p>
+              <p>derinindetails@gmail.com<br />+234 812 324 3296 • @derinindetails</p>
             </div>
           </div>
 
